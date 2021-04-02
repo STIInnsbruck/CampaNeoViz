@@ -5,7 +5,6 @@ credentials.ts
 *.bbl
 *.bcf
 *.blg
-*.pdf
 !assets/*.pdf
 *.fls
 *.log
