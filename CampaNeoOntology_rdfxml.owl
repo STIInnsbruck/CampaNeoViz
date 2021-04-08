@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21#"
-     xml:base="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/untitled-ontology-21"
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/CampaNeo#"
+     xml:base="http://www.semanticweb.org/ontologies/CampaNeo#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -9,7 +9,6 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:CampaNeo="http://www.semanticweb.org/ontologies/CampaNeo#"
-     xmlns:Consent_Sensor="http://www.semanticweb.org/aneliakurteva/ontologies/2020/4/Consent_Sensor#"
      xmlns:AnnotationVocabulary="https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#"/>
     
