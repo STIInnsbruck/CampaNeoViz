@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.semanticweb.org/ontologies/CampaNeo#"
-     xml:base="http://www.semanticweb.org/ontologies/CampaNeo#"
+     xml:base="http://www.semanticweb.org/ontologies/CampaNeo"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -90,12 +90,28 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#City -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#City">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/CampaNeo#ControlledBy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#ControlledBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#CampaignController"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Country -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Country">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress"/>
     </owl:ObjectProperty>
     
 
@@ -119,11 +135,35 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#PostCode -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#PostCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/CampaNeo#RequiresData -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#RequiresData">
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Street -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Street">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/CampaNeo#StreetNumber -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#StreetNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Street"/>
     </owl:ObjectProperty>
     
 
@@ -358,7 +398,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#isDataSource">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Sensor"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
     </owl:ObjectProperty>
     
 
@@ -439,6 +479,15 @@
     
 
 
+    <!-- http://www.w3.org/ns/sosa/hasSimpleResult -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasSimpleResult">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasContractualElement -->
 
     <owl:ObjectProperty rdf:about="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/hasContractualElement">
@@ -495,17 +544,13 @@
 
     <!-- http://www.semanticweb.org/ontologies/CampaNeo#City -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#City">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#City"/>
     
 
 
     <!-- http://www.semanticweb.org/ontologies/CampaNeo#Country -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Country">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Country"/>
     
 
 
@@ -519,31 +564,26 @@
 
     <!-- http://www.semanticweb.org/ontologies/CampaNeo#PostCode -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#PostCode">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#PostCode"/>
     
 
 
     <!-- http://www.semanticweb.org/ontologies/CampaNeo#Street -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Street">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasPhysicalAddress"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Street"/>
     
 
 
     <!-- http://www.semanticweb.org/ontologies/CampaNeo#StreetNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#StreetNumber">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Street"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#StreetNumber"/>
     
 
 
     <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasDataType -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasDataType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Name"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -554,6 +594,7 @@
     <!-- http://www.semanticweb.org/ontologies/CampaNeo#hasDataValue -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#hasDataValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/hasSimpleResult"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
     </owl:DatatypeProperty>
     
@@ -637,6 +678,14 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasSimpleResult -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/sosa/hasSimpleResult">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Data"/>
     </owl:DatatypeProperty>
     
 
@@ -727,7 +776,7 @@
     <!-- http://www.semanticweb.org/ontologies/CampaNeo#CarSensor -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#CarSensor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
     </owl:Class>
     
 
@@ -746,7 +795,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#hasSource"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Sensor"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -889,12 +938,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/CampaNeo#Sensor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Sensor"/>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/CampaNeo#SpeedData -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#SpeedData">
@@ -950,6 +993,12 @@
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#online_contract">
         <rdfs:subClassOf rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sensor"/>
     
 
 
@@ -1057,6 +1106,14 @@ A unilateral contract differs from a Bilateral Contract, in which the parties ex
     
 
 
+    <!-- https://w3id.org/GConsent#Consent -->
+
+    <owl:Class rdf:about="https://w3id.org/GConsent#Consent">
+        <rdfs:label>GDPR Consent</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/GConsent#Status -->
 
     <owl:Class rdf:about="https://w3id.org/GConsent#Status">
@@ -1093,13 +1150,13 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Anelia_Kurteva">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#User"/>
-        <CampaNeo:City rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Innsbruck</CampaNeo:City>
-        <CampaNeo:Country rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Austria</CampaNeo:Country>
-        <CampaNeo:PostCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6020</CampaNeo:PostCode>
-        <CampaNeo:Street rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Innstrasse</CampaNeo:Street>
-        <CampaNeo:StreetNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">81</CampaNeo:StreetNumber>
-        <CampaNeo:hasEmail xml:lang="sti2.at">anelia.kurteva</CampaNeo:hasEmail>
-        <CampaNeo:hasMobilePhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">07746729348</CampaNeo:hasMobilePhoneNumber>
+        <City rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Innsbruck</City>
+        <Country rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Austria</Country>
+        <PostCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6020</PostCode>
+        <Street rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Innstrasse</Street>
+        <StreetNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">81</StreetNumber>
+        <hasEmail xml:lang="sti2.at">anelia.kurteva</hasEmail>
+        <hasMobilePhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">07746729348</hasMobilePhoneNumber>
     </owl:NamedIndividual>
     
 
@@ -1108,8 +1165,8 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
-        <CampaNeo:hasConsentBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#user1"/>
-        <CampaNeo:wasCreatedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Allianz"/>
+        <hasConsentBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#user1"/>
+        <wasCreatedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Allianz"/>
         <rdfs:comment>DriveSmart is backed by an insurance company to develop customisable insurance risk models based on driver behaviour.</rdfs:comment>
         <rdfs:label>Drive Smart</rdfs:label>
     </owl:NamedIndividual>
@@ -1120,9 +1177,9 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
-        <CampaNeo:hasConsentBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#user1"/>
-        <CampaNeo:wasCreatedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck"/>
-        <CampaNeo:wasCreatedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
+        <hasConsentBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#user1"/>
+        <wasCreatedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck"/>
+        <wasCreatedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
         <rdfs:comment>GreenFuture is founded by universities and several companies to achieve less CO2 emissions by researching new technologies to save gas</rdfs:comment>
         <rdfs:label>Green Future</rdfs:label>
     </owl:NamedIndividual>
@@ -1133,10 +1190,10 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#Highway_Tirol">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Campaign"/>
-        <CampaNeo:hasConsentBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#user1"/>
-        <CampaNeo:wasCreatedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government"/>
-        <CampaNeo:hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-12-12T00:00:00</CampaNeo:hasEndDate>
-        <CampaNeo:hasStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-10T00:00:00</CampaNeo:hasStartDate>
+        <hasConsentBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#user1"/>
+        <wasCreatedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government"/>
+        <hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-12-12T00:00:00</hasEndDate>
+        <hasStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-10T00:00:00</hasStartDate>
         <rdfs:comment>Highway Tirol aims to find better solutions in traffic routing and speed constraints on public highways.</rdfs:comment>
         <rdfs:label>Highway Tirol</rdfs:label>
     </owl:NamedIndividual>
@@ -1146,7 +1203,7 @@ Represents the status of consent for the data subject. This allows persisting th
     <!-- http://www.semanticweb.org/ontologies/CampaNeo#STI_Innsbruck -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#STI_Innsbruck">
-        <CampaNeo:isPartOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck"/>
+        <isPartOf rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck"/>
         <rdfs:comment>STI Innsbruck is a research group at the University of Innsbruck engaged in research and development to bring information and communication technologies of the future into today&apos;s world.</rdfs:comment>
         <rdfs:seeAlso>UIBK</rdfs:seeAlso>
     </owl:NamedIndividual>
@@ -1188,11 +1245,11 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_drive_smart1">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#SpeedData"/>
-        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
-        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart"/>
-        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</CampaNeo:hasDataType>
-        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.55</CampaNeo:hasDataValue>
-        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-13T09:01:00</CampaNeo:wasRetrievedAtTime>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
+        <wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart"/>
+        <hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</hasDataType>
+        <hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.55</hasDataValue>
+        <wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-13T09:01:00</wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
@@ -1201,11 +1258,11 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_drive_smart2">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#SpeedData"/>
-        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
-        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart"/>
-        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</CampaNeo:hasDataType>
-        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.55</CampaNeo:hasDataValue>
-        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T09:02:00</CampaNeo:wasRetrievedAtTime>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
+        <wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart"/>
+        <hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</hasDataType>
+        <hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.55</hasDataValue>
+        <wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T09:02:00</wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
@@ -1214,11 +1271,11 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_drive_smart3">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#FuelGaugeData"/>
-        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Allianz"/>
-        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart"/>
-        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</CampaNeo:hasDataType>
-        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.31</CampaNeo:hasDataValue>
-        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-15T18:31:00</CampaNeo:wasRetrievedAtTime>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Allianz"/>
+        <wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart"/>
+        <hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</hasDataType>
+        <hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.31</hasDataValue>
+        <wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-15T18:31:00</wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
@@ -1227,11 +1284,11 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_drive_smart4">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#FuelGaugeData"/>
-        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Allianz"/>
-        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart"/>
-        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</CampaNeo:hasDataType>
-        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.31</CampaNeo:hasDataValue>
-        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-18T18:01:00</CampaNeo:wasRetrievedAtTime>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Allianz"/>
+        <wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Drive_Smart"/>
+        <hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</hasDataType>
+        <hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.31</hasDataValue>
+        <wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-18T18:01:00</wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
@@ -1240,12 +1297,12 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future1">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#GPSData"/>
-        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck"/>
-        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
-        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</CampaNeo:hasDataType>
-        <CampaNeo:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.2734</CampaNeo:hasGPSLatitude>
-        <CampaNeo:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7783203</CampaNeo:hasGPSLongitude>
-        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-11T08:48:00</CampaNeo:wasRetrievedAtTime>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck"/>
+        <wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
+        <hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</hasDataType>
+        <hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.2734</hasGPSLatitude>
+        <hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7783203</hasGPSLongitude>
+        <wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-11T08:48:00</wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
@@ -1254,11 +1311,11 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future2">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#SpeedData"/>
-        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
-        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
-        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</CampaNeo:hasDataType>
-        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.5</CampaNeo:hasDataValue>
-        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-11T09:01:00</CampaNeo:wasRetrievedAtTime>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
+        <wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
+        <hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed</hasDataType>
+        <hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.5</hasDataValue>
+        <wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-11T09:01:00</wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
@@ -1267,11 +1324,11 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future3">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#FuelGaugeData"/>
-        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
-        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
-        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</CampaNeo:hasDataType>
-        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.35</CampaNeo:hasDataValue>
-        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T09:02:00</CampaNeo:wasRetrievedAtTime>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
+        <wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
+        <hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</hasDataType>
+        <hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.35</hasDataValue>
+        <wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T09:02:00</wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
@@ -1280,12 +1337,12 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future4">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#GPSData"/>
-        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck"/>
-        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
-        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</CampaNeo:hasDataType>
-        <CampaNeo:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</CampaNeo:hasGPSLatitude>
-        <CampaNeo:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.55</CampaNeo:hasGPSLongitude>
-        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T08:35:00</CampaNeo:wasRetrievedAtTime>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#University_of_Innsbruck"/>
+        <wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
+        <hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</hasDataType>
+        <hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</hasGPSLatitude>
+        <hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.55</hasGPSLongitude>
+        <wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T08:35:00</wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
@@ -1294,11 +1351,11 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_green_future5">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#FuelGaugeData"/>
-        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
-        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
-        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</CampaNeo:hasDataType>
-        <CampaNeo:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.59</CampaNeo:hasDataValue>
-        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T09:05:00</CampaNeo:wasRetrievedAtTime>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Volkswagen"/>
+        <wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Green_Future"/>
+        <hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fuel</hasDataType>
+        <hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.59</hasDataValue>
+        <wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-12T09:05:00</wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
@@ -1307,12 +1364,12 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_highway_tirol1">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#GPSData"/>
-        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government"/>
-        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Highway_Tirol"/>
-        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</CampaNeo:hasDataType>
-        <CampaNeo:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.55</CampaNeo:hasGPSLatitude>
-        <CampaNeo:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</CampaNeo:hasGPSLongitude>
-        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T08:01:00</CampaNeo:wasRetrievedAtTime>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government"/>
+        <wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Highway_Tirol"/>
+        <hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</hasDataType>
+        <hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.55</hasGPSLatitude>
+        <hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</hasGPSLongitude>
+        <wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T08:01:00</wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
@@ -1321,12 +1378,12 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_highway_tirol2">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#GPSData"/>
-        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government"/>
-        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Highway_Tirol"/>
-        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</CampaNeo:hasDataType>
-        <CampaNeo:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.5</CampaNeo:hasGPSLatitude>
-        <CampaNeo:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</CampaNeo:hasGPSLongitude>
-        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T08:02:00</CampaNeo:wasRetrievedAtTime>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government"/>
+        <wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Highway_Tirol"/>
+        <hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</hasDataType>
+        <hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.5</hasGPSLatitude>
+        <hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</hasGPSLongitude>
+        <wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T08:02:00</wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
@@ -1335,12 +1392,12 @@ Represents the status of consent for the data subject. This allows persisting th
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/CampaNeo#datapoint_highway_tirol3">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#GPSData"/>
-        <CampaNeo:isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government"/>
-        <CampaNeo:wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Highway_Tirol"/>
-        <CampaNeo:hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</CampaNeo:hasDataType>
-        <CampaNeo:hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.5</CampaNeo:hasGPSLatitude>
-        <CampaNeo:hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</CampaNeo:hasGPSLongitude>
-        <CampaNeo:wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T18:31:00</CampaNeo:wasRetrievedAtTime>
+        <isRequestedBy rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Tyrolean_Government"/>
+        <wasRetrievedByCampaign rdf:resource="http://www.semanticweb.org/ontologies/CampaNeo#Highway_Tirol"/>
+        <hasDataType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPS</hasDataType>
+        <hasGPSLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.5</hasGPSLatitude>
+        <hasGPSLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-7.7</hasGPSLongitude>
+        <wasRetrievedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-14T18:31:00</wasRetrievedAtTime>
     </owl:NamedIndividual>
     
 
